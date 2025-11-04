@@ -23,6 +23,7 @@
   font-size: 14px;
   padding: 0.5em 1em;
   text-align: center;
+  line-height: 1.5;
 }
 .top-bar a {
   color: var(--accent);
@@ -103,7 +104,7 @@ header {
 /* Hero Section */
 /* ------------------------- */
 .hero {
-  background: url("images/background.jpg") center/cover no-repeat;
+  background: url("images/background.png") center/cover no-repeat;
   min-height: 85vh;
   display: flex;
   align-items: center;
@@ -250,22 +251,109 @@ footer {
 /* ------------------------- */
 /* Responsive Design */
 /* ------------------------- */
-@media (max-width: 900px) {
-  .hero-overlay {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-text {
-    flex: none;
-  }
-  .form-box {
-    width: 100%;
-  }
+@media (max-width: 1024px) {
   .nav-bar {
     flex-direction: column;
     text-align: center;
+    gap: 1em;
+  }
+  .contact-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navigation */
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
   }
   .main-nav {
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 0.5em;
+  }
+  .main-nav a {
+    font-size: 15px;
+    padding: 0.4em 0.6em;
+  }
+  .callback-btn {
+    padding: 10px 16px;
+    width: 100%;
+  }
+
+  /* Hero Section */
+  .hero-overlay {
+    flex-direction: column;
+    text-align: center;
+    padding: 2em 1.5em;
+    gap: 2em;
+  }
+  .hero-text h1 {
+    font-size: 1.5em;
+  }
+  .hero-text h2 {
+    font-size: 1.1em;
+  }
+  .hero-text p {
+    font-size: 0.95em;
+  }
+  .hero-call {
+    display: block;
+    margin: 1.2em auto 0;
+    font-size: 1em;
+    padding: 14px 22px;
+  }
+
+  /* Contact Form */
+  .form-box {
+    width: 100%;
+  }
+  .contact-form {
+    max-width: 100%;
+    padding: 1.5em;
+  }
+  .contact-form input,
+  .contact-form select {
+    font-size: 15px;
+  }
+  .form-submit {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 2em 1em;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container img {
+    height: 55px;
+  }
+  .hero {
+    padding: 2em 0.5em;
+  }
+  .hero-overlay {
+    width: 95%;
+    padding: 1.5em 1em;
+  }
+  .hero-text h1 {
+    font-size: 1.3em;
+  }
+  .hero-text h2 {
+    font-size: 1em;
+  }
+  .callback-btn,
+  .hero-call,
+  .form-submit {
+    width: 100%;
   }
 }
