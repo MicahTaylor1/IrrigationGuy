@@ -15,15 +15,19 @@
     <span class="area">Serving the <strong>Tulsa, OK Area</strong></span>
   </div>
 
-  <!-- Header + Navigation -->
+  <!-- Header -->
   <header>
     <div class="nav-bar">
       <div class="logo-container">
         <img src="images/logo.png" alt="Apex Logo" class="logo" />
       </div>
 
-      <!-- Hamburger Menu Button -->
-      <button id="menuToggle" class="menu-toggle" aria-label="Toggle Menu">☰</button>
+      <!-- Hamburger -->
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
 
       <!-- Navigation Links -->
       <nav id="mainNav" class="main-nav">
@@ -36,7 +40,7 @@
         <a href="#">Contact</a>
       </nav>
 
-      <!-- Call-to-Action -->
+      <!-- Contact Buttons -->
       <div class="contact-actions">
         <button class="callback-btn">Request Call Back</button>
         <div class="call-info">
@@ -47,7 +51,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-overlay">
       <div class="hero-text">
@@ -102,19 +106,17 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 Apex Foundation Solutions. All Rights Reserved.</p>
   </footer>
 
-  <!-- JavaScript for Menu -->
   <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainNav');
 
-    menuToggle.addEventListener("click", () => {
-      mainNav.classList.toggle("open");
-      menuToggle.classList.toggle("active");
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.classList.toggle('active');
     });
   </script>
 </body>

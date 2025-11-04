@@ -13,30 +13,25 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* ------------------------- */
 /* Top Bar */
-/* ------------------------- */
 .top-bar {
   background: var(--navy-light);
   color: var(--white);
   font-size: 14px;
   padding: 0.5em 1em;
   text-align: center;
-  line-height: 1.5;
 }
 .top-bar a {
   color: var(--accent);
-  margin: 0 6px;
   text-decoration: none;
 }
 
-/* ------------------------- */
-/* Header + Navigation */
-/* ------------------------- */
+/* Header */
 header {
   background: var(--navy);
   color: var(--white);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  position: relative;
 }
 .nav-bar {
   display: flex;
@@ -44,13 +39,12 @@ header {
   justify-content: space-between;
   padding: 1em 2em;
   flex-wrap: wrap;
-  position: relative;
 }
 .logo-container img {
   height: 65px;
 }
 
-/* Main Nav (desktop) */
+/* Nav Links */
 .main-nav {
   display: flex;
   gap: 1.2em;
@@ -68,20 +62,19 @@ header {
   background: var(--accent);
 }
 
-/* Contact / Call Buttons */
+/* Contact Section */
 .contact-actions {
   display: flex;
   align-items: center;
-  gap: 1.2em;
+  gap: 1em;
 }
 .callback-btn {
   background: var(--accent);
   color: var(--white);
-  border: none;
   padding: 10px 18px;
   border-radius: 6px;
+  border: none;
   cursor: pointer;
-  transition: 0.3s;
 }
 .callback-btn:hover {
   background: #4a7eff;
@@ -90,23 +83,38 @@ header {
   text-align: right;
 }
 .call-info strong {
-  display: block;
   color: #d8e3ff;
 }
 
-/* Hamburger Button */
+/* Hamburger */
 .menu-toggle {
   display: none;
-  font-size: 30px;
-  color: var(--white);
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
   background: none;
   border: none;
   cursor: pointer;
 }
+.bar {
+  height: 3px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
 
-/* ------------------------- */
-/* Hero Section */
-/* ------------------------- */
+/* Hero */
 .hero {
   background: url("images/background.png") center/cover no-repeat;
   min-height: 85vh;
@@ -116,17 +124,15 @@ header {
   padding: 3em 1em;
 }
 .hero-overlay {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 3em;
-  width: 90%;
-  max-width: 1200px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 14px;
   padding: 3em 2.5em;
+  display: flex;
   flex-wrap: wrap;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  justify-content: space-between;
+  gap: 2.5em;
+  max-width: 1200px;
+  width: 90%;
 }
 .hero-text {
   flex: 1 1 450px;
@@ -141,27 +147,17 @@ header {
   font-size: 1.2em;
   margin-bottom: 1em;
 }
-.hero-text p {
-  margin-bottom: 0.4em;
-}
 .hero-call {
-  display: inline-block;
-  margin-top: 1em;
-  padding: 12px 20px;
   background: var(--accent);
   color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
+  padding: 12px 20px;
   border-radius: 8px;
-  transition: 0.3s;
-}
-.hero-call:hover {
-  background: #4a7eff;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1em;
 }
 
-/* ------------------------- */
 /* Contact Form */
-/* ------------------------- */
 .form-box {
   flex: 1 1 350px;
   display: flex;
@@ -178,34 +174,25 @@ header {
   width: 100%;
   max-width: 360px;
 }
-.contact-form h3 {
-  text-align: center;
-  margin-bottom: 0.5em;
-}
 .contact-form input,
 .contact-form select {
   padding: 12px;
-  border-radius: 6px;
   border: none;
-  outline: none;
+  border-radius: 6px;
 }
 .form-submit {
   background: var(--accent);
-  color: var(--white);
   border: none;
-  font-weight: bold;
+  color: var(--white);
   padding: 12px;
   border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
 }
 .form-submit:hover {
   background: #4a7eff;
 }
 
-/* ------------------------- */
 /* Testimonials */
-/* ------------------------- */
 .testimonials {
   background: var(--gray);
   padding: 3em 1em;
@@ -222,9 +209,7 @@ header {
   color: var(--navy);
 }
 
-/* ------------------------- */
 /* Footer */
-/* ------------------------- */
 footer {
   background: var(--navy);
   color: var(--white);
@@ -233,38 +218,35 @@ footer {
 }
 
 /* ------------------------- */
-/* MOBILE STYLING */
+/* MOBILE NAVIGATION */
 /* ------------------------- */
 @media (max-width: 900px) {
   .menu-toggle {
-    display: block;
+    display: flex;
   }
 
   .main-nav {
     display: none;
     flex-direction: column;
-    background: var(--navy-light);
     position: absolute;
     top: 100%;
     left: 0;
+    background: var(--navy-light);
     width: 100%;
+    text-align: center;
     padding: 1em 0;
     border-top: 2px solid var(--accent);
-    opacity: 0;
-    transform: translateY(-20px);
     transition: all 0.3s ease;
+    z-index: 999;
   }
 
   .main-nav.open {
     display: flex;
-    opacity: 1;
-    transform: translateY(0);
   }
 
   .main-nav a {
     padding: 0.8em;
-    text-align: center;
-    width: 100%;
+    font-size: 16px;
   }
 
   .contact-actions {
@@ -276,14 +258,9 @@ footer {
   .hero-overlay {
     flex-direction: column;
     text-align: center;
-    padding: 2em 1.5em;
   }
 
   .form-box {
     width: 100%;
-  }
-
-  .contact-form {
-    max-width: 100%;
   }
 }
